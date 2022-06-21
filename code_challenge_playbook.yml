@@ -1,0 +1,16 @@
+- hosts: all
+  become: true
+  gather_facts: no
+  vars :
+    username: ahmed
+  tasks:
+    - name: transfert of the file
+      copy: src=./ dest=/home/{{username}}
+
+    - name: run docker compose
+      become: yes  
+      shell: pwd && docker-compose -f $(pwd)/docker-compose.yml  up -d
+      register: cmd_out
+    - name: debug
+      become: yes
+      debug: var=cmd_out   
