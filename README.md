@@ -6,8 +6,8 @@ The main idea is to run a 3 containers (haproxy, nginx, php app) and prevent DDO
 ## prerequisites
 
 #### you have to install 
-[x] docker
-[x] ansible
+1.  docker
+2.  ansible
 
 ## Execution
  ### you have to change the ip adresse ad user  in the hosts file 
